@@ -1,0 +1,112 @@
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-white">
+<div class="panel heading">
+    <h3 class="pt-3 font-weight-bold"> Sign up </h3>
+</div>
+<div class="panel-body p-3">
+    <form [formGroup]="signUpForm">
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName')">
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="FirstName" type="text" placeholder="FirstName">
+            </div>
+        </div>
+        @if(signUpForm.controls['FirstName'].dirty && signUpForm.hasError('required','FirstName'))
+        {
+            <small class="text-danger">*FirstName is required</small>
+        }
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName')">
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="LastName" type="text" placeholder="LastName">
+            </div>
+        </div> @if(signUpForm.controls['LastName'].dirty && signUpForm.hasError('required','LastName'))
+        {
+            <small class="text-danger">*LastName is required</small>
+        }
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email')">
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="Email" type="text" placeholder="Email">
+            </div>
+        </div> 
+        @if(signUpForm.controls['Email'].dirty && signUpForm.hasError('required','Email'))
+        {
+            <small class="text-danger">*Email is required</small>
+        }
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['Address'].dirty && signUpForm.hasError('required','Address')">
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="Address" type="text" placeholder="Address">
+            </div>
+        </div>
+        @if(signUpForm.controls['Address'].dirty && signUpForm.hasError('required','Address'))
+        {
+            <small class="text-danger">*Address is required</small>
+        }
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['phone'].dirty && signUpForm.hasError('required','phone')">
+                <span class="fa fa-user p-2"></span>
+                <input formControlName="phone" type="text" placeholder="Phone">
+            </div>
+        </div>
+        @if(signUpForm.controls['phone'].dirty && signUpForm.hasError('required','phone'))
+        {
+            <small class="text-danger">*Phone is required</small>
+        }
+        <div class="form-groups pt-3">
+            <div class="input-fields" [class.error]="signUpForm.controls['Type'].dirty && signUpForm.hasError('required','type')">
+                <span class="fa fa-users p-2"></span> <!-- You can change the icon as per your need -->
+                <!-- <div *ngIf="listType && listType.length"> -->
+                    <select class="role-select" formControlName="Type" id="listTypeSelect">
+                      <option value="" disabled selected>Select your Type</option>
+                      <option *ngFor="let type of listType" [value]="type.type_ID">
+                        {{ type.type_Name }}
+                      </option>
+                    </select>
+                  </div>
+                  
+            </div>
+         
+        @if(signUpForm.controls['Type'].dirty && signUpForm.hasError('required','type'))
+        {
+            <small class="text-danger">*type is required</small>
+        }
+        <div class="form-groups pt-3">
+            <div class="input-fields" [class.error]="signUpForm.controls['Department'].dirty && signUpForm.hasError('required','Department')">
+                <span class="fa fa-users p-2"></span> <!-- You can change the icon as per your need -->
+                <select class="role-select" formControlName="Department" id="listDepartmentSelect">
+                    <option value="" disabled selected>Select your Department</option>
+                    <option *ngFor="let department of ListDepartment" [value]="department.department_ID">
+                      {{ department.department_Name }}
+                    </option>
+                  </select>
+            </div>
+        </div>
+        @if(signUpForm.controls['Department'].dirty && signUpForm.hasError('required','Department'))
+        {
+            <small class="text-danger">*Department is required</small>
+        }
+        <div class="form-group pt-3">
+            <div class="input-field" [class.error]="signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password')">
+                <span class="fa fa-lock p-2"></span>
+                <input formControlName="Password" [type]="type" placeholder="Password">
+                <span (click)="hideshowpass()" class="fa {{eyeIcon}}"></span>
+            </div>
+        </div>
+        @if(signUpForm.controls['Password'].dirty && signUpForm.hasError('required','Password'))
+        {
+            <small class="text-danger">*Password is required</small>
+        }
+        <button type="submit" class="btn btn-primary btn-block mt-4 w-100" (click)="onSignup()"> Sign Up </button>
+        
+    </form>
+</div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

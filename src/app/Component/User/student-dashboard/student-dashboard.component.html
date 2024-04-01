@@ -1,0 +1,38 @@
+<h1> Hello Student Welcome here !! </h1>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-3 mb-2">
+        <div class="card">
+          <img src="assets/view.png" class="card-img-top img-fluid" alt="View Image">
+          <div class="card-body">
+          
+            <a class="nav-link" routerLink="/view" routerLinkActive="active" ariaCurrentWhenActive="page"><h2 class="card-title text-center">View Class</h2></a>
+             
+            <p class="card-text"></p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-2">
+        <div class="card">
+          <img src="assets/enroll.png" class="card-img-top img-fluid" alt="Enroll Image">
+          <div class="card-body">
+            <a class="nav-link" routerLink="/enroll" routerLinkActive="active" ariaCurrentWhenActive="page"><h2 class="card-title text-center">Enroll Class</h2></a>
+
+             
+            <p class="card-text"></p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<button (click)="logout()" class="btn btn-danger">Log Out</button>
+
+<ul *ngFor="let user of users" >
+    <li>
+{{user.email}}
+    </li>
+</ul>

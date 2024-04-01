@@ -1,0 +1,33 @@
+.form-groups {
+    margin-bottom: 15px;
+}
+
+.input-fields {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 5px; /* Rounded borders */
+}
+
+.input-fields input[type="text"],
+.input-fields select.role-select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent; /* Keep the background consistent */
+}
+
+.input-fields input[type="text"]:focus,
+.input-fields select.role-select:focus {
+    outline: none; /* Removes the default focus outline */
+}
+
+/* Icon styles (assuming you're using Font Awesome) */
+.input-fields .fa {
+    color: #777; /* Icon color */
+    min-width: 30px; /* Ensure icons have enough space */
+    text-align: center; /* Center the icons */
+}
+
+/* You might need to add custom styles for the dropdown arrow if you want it to match your design more closely. */

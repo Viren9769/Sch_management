@@ -1,0 +1,27 @@
+/* Ensure the navbar items are displayed inline */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin-right: 20px; /* Adjust spacing between links */
+    text-decoration: none;
+    color: #000; /* Change as per your color scheme */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #0056b3; /* Change as per your color scheme for hover effect */
+}
+
+/* Optional: Responsiveness adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .nav-link {
+        padding: 10px 0; /* Adjust based on your design */
+    }
+}
